@@ -7,8 +7,10 @@ public class LibraryCalculator {
                           {"b", "b", "y", "r", "b", "y"},
                           {"y", "g", "b", "r", "g", "r"}};
     
-    
+    public String doorFinder(){
 
+        
+    }
 
     public static void main (String args[]){
 
@@ -22,6 +24,15 @@ public class LibraryCalculator {
         String middleDoorTop = scanner.nextLine();
         System.out.println("Enter the third door that is the floor above you and to the right");
         String rightDoorTop = scanner.nextLine();
+
+        System.out.println("Enter the first door that is on your floor and to the left");
+        String leftDoor = scanner.nextLine();
+        System.out.println("Enter the second door that is on your floor and in the middle");
+        String middleDoor = scanner.nextLine();
+        System.out.println("Enter the third door that is on your floor and to the right");
+        String rightDoor = scanner.nextLine();
+
+
 
     }
 
