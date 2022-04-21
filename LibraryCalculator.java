@@ -32,10 +32,11 @@ public class LibraryCalculator {
         for (int i = 0; i < library.length - 1; i++){
             System.out.println("1st for loop started");
             for (int j = 0; j < 4; j++){
-                System.out.println("2nd for loop started");
-                System.out.println(library[i][j] + " " + leftDoorTop);
-                System.out.println(library[i][j+1] + " " + middleDoorTop);
-                System.out.println(library[i][j+2] + " " + rightDoorTop);
+               // System.out.println("2nd for loop started");
+               // System.out.println(library[i][j] + " " + leftDoorTop);
+               // System.out.println(library[i][j+1] + " " + middleDoorTop);
+               // System.out.println(library[i][j+2] + " " + rightDoorTop);
+               System.out.println(library[i][j].equals(leftDoorTop));
               if (library[i][j] == leftDoorTop && library[i][j+1] == middleDoorTop && library[i][j+2] == rightDoorTop) {
                 System.out.println(library[i][j+1]);
                 System.out.println(i);
