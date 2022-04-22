@@ -45,6 +45,8 @@ public class LibraryCalculator {
                 System.out.println(i);
                 i = topRow;
                 if (floorThere == false){
+                    answer[0] = i;
+                    answer[1] = j + 1; 
                     foundTheDoor = true;
                     break;
                 }
@@ -82,30 +84,39 @@ public class LibraryCalculator {
         LibraryCalculator calculator = new LibraryCalculator("", "", "", "", "", "", true);
         Scanner scanner = new Scanner(System.in);
         System.out.println("test");
-        System.out.println("Initialized. The following print statements will tell you what to enter. When it says to enter the door, enter the color of the door as r, b, y, or g depending on the color of the door. If there is no floor above you when it prompts you to, enter n.");
+        System.out.println("Initialized. The following print statements will tell you what to enter. When it says to enter the door, enter the color of the door as r, b, y, or g depending on the color of the door. If there is no door to the left or right of you, press n");
         System.out.println();
         System.out.println("Is there a floor above you? If yes, enter true. If no, enter false");
         calculator.floorThere = scanner.nextBoolean();
         // System.out.println(calculator.floorThere);
+        if (calculator.floorThere == true){
         System.out.println("Enter first door that is the floor above you and to the left");
         calculator.leftDoorTop = scanner.nextLine();
-        System.out.println(calculator.leftDoorTop);
+        // System.out.println(calculator.leftDoorTop);
         calculator.leftDoorTop = scanner.nextLine();
-        System.out.println(calculator.leftDoorTop);
+        // System.out.println(calculator.leftDoorTop);
         // System.out.println(calculator.doorFinder());
         System.out.println("Enter the second door that is the floor above you in the middle");
         calculator.middleDoorTop = scanner.nextLine();
-        System.out.println(calculator.middleDoorTop);
+        // System.out.println(calculator.middleDoorTop);
         System.out.println("Enter the third door that is the floor above you and to the right");
         calculator.rightDoorTop = scanner.nextLine();
-
+        }
         System.out.println("Enter the first door that is on your floor and to the left");
         calculator.leftDoor = scanner.nextLine();
+        if (calculator.floorThere == false){
+            calculator.leftDoor = scanner.nextLine();
+        }
         System.out.println("Enter the second door that is on your floor and in the middle");
         calculator.middleDoor = scanner.nextLine();
         System.out.println("Enter the third door that is on your floor and to the right");
         calculator.rightDoor = scanner.nextLine();
-
+        if (calculator.floorThere == false){
+            calculator.leftDoorTop = calculator.leftDoor;
+            calculator.middleDoorTop = calculator.middleDoor;
+            calculator.rightDoorTop = calculator.rightDoor;
+        }
+        
         int[] answer = calculator.doorFinder();
         System.out.println(answer[0] + " " + answer[1]);
 
