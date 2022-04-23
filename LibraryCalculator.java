@@ -71,7 +71,7 @@ public class LibraryCalculator {
                 System.out.println(library[i][j+2]);
                 System.out.println(i);
                 // System.out.println(i);
-                i = topRow;
+                topRow = i;
                 if (floorThere == false){
                     answer[0] = i;
                     answer[1] = j + 1; 
