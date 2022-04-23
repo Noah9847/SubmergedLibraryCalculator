@@ -54,9 +54,10 @@ public class LibraryCalculator {
         int topRow = 0;
         boolean foundTheDoor = false;
         int[] answer = new int[2];
+        int sum = 0;
         // System.out.println(answer[0] + " " + answer[1]);
 
-        for (int i = 0; i < library.length - 1; i++){
+        for (int i = 0; i < library.length; i++){
             // System.out.println("1st for loop started");
             for (int j = 0; j < 6; j++){
                // System.out.println("2nd for loop started");
@@ -65,7 +66,10 @@ public class LibraryCalculator {
                // System.out.println(library[i][j+2] + " " + rightDoorTop);
                // System.out.println(library[i][j].equals(leftDoorTop));
               if (library[i][j].equals(leftDoorTop) && library[i][j+1].equals(middleDoorTop) && library[i][j+2].equals(rightDoorTop)) {
-                // System.out.println(library[i][j+1]);
+                System.out.println(library[i][j]);
+                System.out.println(library[i][j+1]);
+                System.out.println(library[i][j+2]);
+                System.out.println(i);
                 // System.out.println(i);
                 i = topRow;
                 if (floorThere == false){
@@ -75,10 +79,16 @@ public class LibraryCalculator {
                     break;
                 }
                 // break;
-                for (int a = i + 1; a < library.length - i + 1; a++){
+                for (int a = i + 1; a < library.length; a++){
+                    sum = i + 1;
+                    System.out.println(i);
+                    System.out.println(a + " " + sum);
                     for (int b = 0; b < 6; b++){
                         if (library[a][b].equals(leftDoor) && library[a][b+1].equals(middleDoor) && library[a][b+2].equals(rightDoor)){
-                            // System.out.println(library[a][b+1]);
+                            System.out.println(library[a][b]);
+                            System.out.println(library[a][b+1]);
+                            System.out.println(library[a][b+2]);
+                            System.out.println(a);
                             // System.out.println(a);
                             // System.out.println("Found both doors");
                             answer[0] = a;
