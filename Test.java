@@ -5,8 +5,17 @@ public class Test {
         
         int a = j + 1;
         int b = 1 + j;
-        System.out.println(a);
-        System.out.println(b);
+        String cool = "r";
+        String also = "r";
+        String not = "b";
+        // System.out.println(a);
+        // System.out.println(b);
+        if (cool != not){
+            System.out.println("something");
+        }
+        if (cool == also){
+            System.out.println("something else");
+        }
     }
 
 }

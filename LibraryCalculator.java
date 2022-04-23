@@ -127,15 +127,19 @@ public class LibraryCalculator {
             calculator.floorThere = true;
         }
         else if (calculator.floorThereString.equals("no") || calculator.floorThereString.equals("No")){
-            
+            calculator.floorThere = false;
         }
-        calculator.floorThere = scanner.nextBoolean();
+        // calculator.floorThere = scanner.nextBoolean();
         // System.out.println(calculator.floorThere);
         if (calculator.floorThere == true){
         System.out.println("Enter first door that is the floor above you and to the left");
-        calculator.leftDoorTop = scanner.nextLine();
+        // calculator.leftDoorTop = scanner.nextLine();
         // System.out.println(calculator.leftDoorTop);
         calculator.leftDoorTop = scanner.nextLine();
+        /*if (calculator.leftDoorTop != "r" || calculator.leftDoorTop != "y" || calculator.leftDoorTop != "g" || calculator.leftDoorTop != "b"){
+            System.out.println("Invalid input entered. Shutting down. Please try again");
+            scanner.close();
+        } */
         // System.out.println(calculator.leftDoorTop);
         // System.out.println(calculator.doorFinder());
         System.out.println("Enter the second door that is the floor above you in the middle");
