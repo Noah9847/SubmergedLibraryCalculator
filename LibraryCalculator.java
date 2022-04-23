@@ -8,6 +8,7 @@ public class LibraryCalculator {
     String leftDoor;
     String middleDoor;
     String rightDoor;
+    String floorThereString;
     boolean floorThere;
     int[] answer;
 
@@ -121,6 +122,13 @@ public class LibraryCalculator {
         System.out.println("Initialized. The following print statements will tell you what to enter. When it says to enter the door, enter the color of the door as r, b, y, or g depending on the color of the door. If there is no door to the left or right of you, press n");
         System.out.println();
         System.out.println("Is there a floor above you? If yes, enter true. If no, enter false");
+        calculator.floorThereString = scanner.nextLine();
+        if (calculator.floorThereString.equals("yes") || calculator.floorThereString.equals("Yes")){
+            calculator.floorThere = true;
+        }
+        else if (calculator.floorThereString.equals("no") || calculator.floorThereString.equals("No")){
+            
+        }
         calculator.floorThere = scanner.nextBoolean();
         // System.out.println(calculator.floorThere);
         if (calculator.floorThere == true){
