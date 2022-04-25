@@ -136,10 +136,10 @@ public class LibraryCalculator {
         // calculator.leftDoorTop = scanner.nextLine();
         // System.out.println(calculator.leftDoorTop);
         calculator.leftDoorTop = scanner.nextLine();
-        /*if (calculator.leftDoorTop != "r" || calculator.leftDoorTop != "y" || calculator.leftDoorTop != "g" || calculator.leftDoorTop != "b"){
+        if (!calculator.leftDoorTop.equals("r") || !calculator.leftDoorTop.equals("y") || !calculator.leftDoorTop.equals("g") || !calculator.leftDoorTop.equals("b")){
             System.out.println("Invalid input entered. Shutting down. Please try again");
             scanner.close();
-        } */
+        }
         // System.out.println(calculator.leftDoorTop);
         // System.out.println(calculator.doorFinder());
         System.out.println("Enter the second door that is the floor above you in the middle");
