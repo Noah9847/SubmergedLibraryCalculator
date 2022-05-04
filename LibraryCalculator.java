@@ -67,10 +67,10 @@ public class LibraryCalculator {
                // System.out.println(library[i][j+2] + " " + rightDoorTop);
                // System.out.println(library[i][j].equals(leftDoorTop));
               if (library[i][j].equals(leftDoorTop) && library[i][j+1].equals(middleDoorTop) && library[i][j+2].equals(rightDoorTop)) {
-                System.out.println(library[i][j]);
-                System.out.println(library[i][j+1]);
-                System.out.println(library[i][j+2]);
-                System.out.println(i);
+               // System.out.println(library[i][j]);
+               // System.out.println(library[i][j+1]);
+               // System.out.println(library[i][j+2]);
+               // System.out.println(i);
                 // System.out.println(i);
                 topRow = i;
                 if (floorThere == false){
@@ -82,14 +82,14 @@ public class LibraryCalculator {
                 // break;
                 for (int a = i + 1; a < library.length; a++){
                     sum = i + 1;
-                    System.out.println(i);
-                    System.out.println(a + " " + sum);
+                   // System.out.println(i);
+                   // System.out.println(a + " " + sum);
                     for (int b = 0; b < 6; b++){
                         if (library[a][b].equals(leftDoor) && library[a][b+1].equals(middleDoor) && library[a][b+2].equals(rightDoor)){
-                            System.out.println(library[a][b]);
-                            System.out.println(library[a][b+1]);
-                            System.out.println(library[a][b+2]);
-                            System.out.println(a);
+                           // System.out.println(library[a][b]);
+                           // System.out.println(library[a][b+1]);
+                           // System.out.println(library[a][b+2]);
+                           // System.out.println(a);
                             // System.out.println(a);
                             // System.out.println("Found both doors");
                             answer[0] = a;
@@ -121,13 +121,24 @@ public class LibraryCalculator {
         // System.out.println("test");
         System.out.println("Initialized. The following print statements will tell you what to enter. When it says to enter the door, enter the color of the door as r, b, y, or g depending on the color of the door. If there is no door to the left or right of you, press n");
         System.out.println();
-        System.out.println("Is there a floor above you? If yes, enter true. If no, enter false");
+        System.out.println("Is there a floor above you?");
         calculator.floorThereString = scanner.nextLine();
         if (calculator.floorThereString.equals("yes") || calculator.floorThereString.equals("Yes")){
+            if (!calculator.floorThereString.equals("yes") && !calculator.floorThereString.equals("Yes")){
+                System.out.println("Invalid input entered. Please enter 'yes' or 'Yes'. Shutting down. Please try again");
+                scanner.close();
+                System.exit(0);
+            }
             calculator.floorThere = true;
         }
+       
         else if (calculator.floorThereString.equals("no") || calculator.floorThereString.equals("No")){
             calculator.floorThere = false;
+        }
+        if (!calculator.floorThereString.equals("no") && !calculator.floorThereString.equals("No") && !calculator.floorThereString.equals("yes") && !calculator.floorThereString.equals("Yes")){
+            System.out.println("Invalid input entered. Please enter 'yes' or 'no'. Shutting down. Please try again");
+            scanner.close();
+            System.exit(0);
         }
         // calculator.floorThere = scanner.nextBoolean();
         // System.out.println(calculator.floorThere);
@@ -136,27 +147,50 @@ public class LibraryCalculator {
         // calculator.leftDoorTop = scanner.nextLine();
         // System.out.println(calculator.leftDoorTop);
         calculator.leftDoorTop = scanner.nextLine();
-        if (!calculator.leftDoorTop.equals("r") || !calculator.leftDoorTop.equals("y") || !calculator.leftDoorTop.equals("g") || !calculator.leftDoorTop.equals("b")){
-            System.out.println("Invalid input entered. Shutting down. Please try again");
+        if (!calculator.leftDoorTop.equals("r") && !calculator.leftDoorTop.equals("y") && !calculator.leftDoorTop.equals("g") && !calculator.leftDoorTop.equals("b")){
+            System.out.println("Invalid input entered. Please provide a 'r', 'y', 'g', or 'b'. Shutting down. Please try again");
             scanner.close();
+            System.exit(0);
         }
         // System.out.println(calculator.leftDoorTop);
         // System.out.println(calculator.doorFinder());
         System.out.println("Enter the second door that is the floor above you in the middle");
         calculator.middleDoorTop = scanner.nextLine();
+        if (!calculator.middleDoorTop.equals("r") && !calculator.middleDoorTop.equals("y") && !calculator.middleDoorTop.equals("g") && !calculator.middleDoorTop.equals("b")){
+            System.out.println("Invalid input entered. Please provide a 'r', 'y', 'g', or 'b'. Shutting down. Please try again");
+            scanner.close();
+            System.exit(0);
+        }
         // System.out.println(calculator.middleDoorTop);
         System.out.println("Enter the third door that is the floor above you and to the right");
         calculator.rightDoorTop = scanner.nextLine();
+        if (!calculator.rightDoorTop.equals("r") && !calculator.rightDoorTop.equals("y") && !calculator.rightDoorTop.equals("g") && !calculator.rightDoorTop.equals("b")){
+            System.out.println("Invalid input entered. Please provide a 'r', 'y', 'g', or 'b'. Shutting down. Please try again");
+            scanner.close();
+            System.exit(0);
+        }
         }
         System.out.println("Enter the first door that is on your floor and to the left");
         calculator.leftDoor = scanner.nextLine();
-        if (calculator.floorThere == false){
-            calculator.leftDoor = scanner.nextLine();
+        if (!calculator.leftDoor.equals("r") && !calculator.leftDoor.equals("y") && !calculator.leftDoor.equals("g") && !calculator.leftDoor.equals("b")){
+            System.out.println("Invalid input entered. Please provide a 'r', 'y', 'g', or 'b'. Shutting down. Please try again");
+            scanner.close();
+            System.exit(0);
         }
         System.out.println("Enter the second door that is on your floor and in the middle");
         calculator.middleDoor = scanner.nextLine();
+        if (!calculator.middleDoor.equals("r") && !calculator.middleDoor.equals("y") && !calculator.middleDoor.equals("g") && !calculator.middleDoor.equals("b")){
+            System.out.println("Invalid input entered. Please provide a 'r', 'y', 'g', or 'b'. Shutting down. Please try again");
+            scanner.close();
+            System.exit(0);
+        }
         System.out.println("Enter the third door that is on your floor and to the right");
         calculator.rightDoor = scanner.nextLine();
+        if (!calculator.rightDoor.equals("r") && !calculator.rightDoor.equals("y") && !calculator.rightDoor.equals("g") && !calculator.rightDoor.equals("b")){
+            System.out.println("Invalid input entered. Please provide a 'r', 'y', 'g', or 'b'. Shutting down. Please try again");
+            scanner.close();
+            System.exit(0);
+        }
         if (calculator.floorThere == false){
             calculator.leftDoorTop = calculator.leftDoor;
             calculator.middleDoorTop = calculator.middleDoor;
